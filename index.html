@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script
       src="https://www.paypal.com/sdk/js?client-id=BAAQAgHcEnBwlvkburr-WmHTHAzltUn_iMKxFHHGN53YVcthCNmnsuAEJxZC43gj_Zdr95nkK8m1yGGU4c&components=hosted-buttons&disable-funding=venmo&currency=USD">
     </script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      #paypal-container-ZAMXJV24DYF6J {
+        width: 100%;
+        max-width: 420px;
+      }
+    </style>
 </head>
+
 <body>
     <div id="paypal-container-ZAMXJV24DYF6J"></div>
+
     <script>
       paypal.HostedButtons({
         hostedButtonId: "ZAMXJV24DYF6J",
         onApprove: function(data, actions) {
           window.location.href = 'thankyou.html';
         }
-      }).render("#paypal-container-ZAMXJV24DYF6J")
+      }).render("#paypal-container-ZAMXJV24DYF6J");
     </script>
 </body>
 </html>
