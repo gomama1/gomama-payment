@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>شكراً لك</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 40px;
+        }
+        .box {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            max-width: 520px;
+            margin: auto;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .receipt {
+            font-size: 22px;
+            font-weight: bold;
+            margin: 18px 0;
+            color: #2c3e50;
+        }
+        .note {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .instagram {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e1306c;
+            margin: 18px 0;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 28px;
+            background-color: #e1306c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .thanks {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>✅ شكراً لك على الدفع</h1>
+
+    <div class="receipt">
+        رقم الإيصال: <span id="receiptNumber"></span>
+    </div>
+
+    <p class="note">
+        يرجى <strong>تصوير هذه الصفحة</strong>  
+        وإرسالها لي في الخاص على الإنستقرام  
+        حتى أتمكن من إرسال <strong>كتيب التمارين</strong> لك 🌸
+    </p>
+
+    <div class="instagram">
+        حساب الإنستقرام:
+        <span dir="ltr">@Gomama_1</span>
+    </div>
+
+    <a class="btn" href="https://www.instagram.com/Gomama_1" target="_blank">
+        فتح الإنستقرام
+    </a>
+
+    <div class="thanks">
+        💙 شكراً لثقتك
+    </div>
+</div>
+
+<script>
+    let receipt = localStorage.getItem("receiptNumber");
+
+    if (!receipt) {
+        receipt = 10010;
+    } else {
+        receipt = parseInt(receipt) + 1;
+    }
+
+    localStorage.setItem("receiptNumber", receipt);
+    document.getElementById("receiptNumber").textContent = receipt;
+</script>
+
+</body>
+</html>
